@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  problem: one
+  text: MyText
+  status_open: false
+
+two:
+  problem: two
+  text: MyText
+  status_open: false

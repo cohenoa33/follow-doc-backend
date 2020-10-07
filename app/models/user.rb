@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :comments, through: :problems, dependent: :destroy
 
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-  validates :username, uniqueness: { case_sensitive: false }, presence: true
-
+  validates :username, uniqueness: { case_sensitive: false }
   has_secure_password
 end

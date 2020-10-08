@@ -1,5 +1,10 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :email
+  attributes :id, :username, :email, :problems
+  # has_many :problems
+  # has_many :dependents
+  # has_many :comments
 
-  has_many :problems
+  def problems
+    ActiveModel::SerializableResource.new(object.problems, each_serializer: ProblemSerializer)
+  end
 end

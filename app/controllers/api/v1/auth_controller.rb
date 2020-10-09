@@ -11,6 +11,11 @@ class Api::V1::AuthController < ApplicationController
     end
   end
 
+  def reauth
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+
+  end
+
   private
 
   def user_login_params

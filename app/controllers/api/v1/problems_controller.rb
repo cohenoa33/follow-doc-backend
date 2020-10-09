@@ -12,4 +12,20 @@ class Api::V1::ProblemsController < ApplicationController
       render json: { message: 'This ID does not exist' }
     end
   end
+
+  def create
+    @problem = Problem.create(problem_params)
+    if @problem.valid?
+      render json: @problem
+
+    else
+      render json: { error: 'failed to add new problem' }, status: :not_acceptable
+    end
+  end
+
+  private
+
+  def problem_params
+    params.require(:problem).permit(:name, :dependent_id, :description)
+  end
 end

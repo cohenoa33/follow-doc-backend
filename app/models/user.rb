@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :dependents
+  has_many :dependents, dependent: :destroy
   has_many :problems, through: :dependents, dependent: :destroy
   has_many :comments, through: :problems, dependent: :destroy
 

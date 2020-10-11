@@ -24,7 +24,6 @@ Comment.create(
   status_open: %i[true false].sample
 )
 
-# Faker::Cannabis.health_benefit
 
 Doctor.create(
 name: "Dr. D",
@@ -41,7 +40,8 @@ time: "10:00",
 note: Faker::Cannabis.health_benefit, 
 doctor_id: Doctor.all.sample.id, 
 problem_id: Problem.all.sample.id, 
-insurance_auth:  %i[true false].sample,
-status_open: %i[true false].sample
+insurance_auth:  true,
+status_open: true
 )
-	
+
+status_open: %i[true false].sample

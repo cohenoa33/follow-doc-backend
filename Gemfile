@@ -46,3 +46,5 @@ gem 'aws-sdk-s3', require: false
 gem 'dotenv-rails', '~> 2.7'
 
 gem 'faker'
+
+gem 'geocoder'

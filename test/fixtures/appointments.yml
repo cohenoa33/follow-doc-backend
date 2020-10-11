@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-10-10
+  time: 2020-10-10 16:01:58
+  note: MyText
+  doctor: one
+  problem: one
+  insurance_auth: false
+  status_open: false
+
+two:
+  date: 2020-10-10
+  time: 2020-10-10 16:01:58
+  note: MyText
+  doctor: two
+  problem: two
+  insurance_auth: false
+  status_open: false

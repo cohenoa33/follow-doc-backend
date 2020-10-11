@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_06_212143) do
+ActiveRecord::Schema.define(version: 2020_10_10_235005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,20 @@ ActiveRecord::Schema.define(version: 2020_10_06_212143) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "appointments", force: :cascade do |t|
+    t.text "note"
+    t.bigint "doctor_id", null: false
+    t.bigint "problem_id", null: false
+    t.boolean "insurance_auth"
+    t.boolean "status_open"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "date"
+    t.string "time"
+    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
+    t.index ["problem_id"], name: "index_appointments_on_problem_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.bigint "problem_id", null: false
     t.text "text"
@@ -51,6 +65,19 @@ ActiveRecord::Schema.define(version: 2020_10_06_212143) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_dependents_on_user_id"
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "zipcode"
+    t.string "state"
+    t.text "info"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "problems", force: :cascade do |t|
@@ -71,6 +98,8 @@ ActiveRecord::Schema.define(version: 2020_10_06_212143) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "doctors"
+  add_foreign_key "appointments", "problems"
   add_foreign_key "comments", "problems"
   add_foreign_key "dependents", "users"
   add_foreign_key "problems", "dependents"

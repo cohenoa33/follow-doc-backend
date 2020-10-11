@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       resources :problems
       resources :dependents
       resources :users
-
+      resources :appointments
+      resources :doctors
+      
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
       get '/persist', to: 'users#persist'

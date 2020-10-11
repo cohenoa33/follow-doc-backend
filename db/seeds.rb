@@ -25,3 +25,23 @@ Comment.create(
 )
 
 # Faker::Cannabis.health_benefit
+
+Doctor.create(
+name: "Dr. D",
+street: "12519 NE 85th Street",
+city: "Kirkland",
+state: "WA",
+zipcode: "98033",
+info: "More info"
+)
+
+Appointment.create(
+date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+time: "10:00",
+note: Faker::Cannabis.health_benefit, 
+doctor_id: Doctor.all.sample.id, 
+problem_id: Problem.all.sample.id, 
+insurance_auth:  %i[true false].sample,
+status_open: %i[true false].sample
+)
+	

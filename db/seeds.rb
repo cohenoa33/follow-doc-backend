@@ -26,12 +26,12 @@ Comment.create(
 
 
 Doctor.create(
-name: "Dr. D",
+name: Faker::TvShows::BigBangTheory.character,
 street: "12519 NE 85th Street",
 city: "Kirkland",
 state: "WA",
 zipcode: "98033",
-info: "More info"
+info: Faker::Movies::StarWars.quote
 )
 
 Appointment.create(
@@ -40,8 +40,7 @@ time: "10:00",
 note: Faker::Cannabis.health_benefit, 
 doctor_id: Doctor.all.sample.id, 
 problem_id: Problem.all.sample.id, 
-insurance_auth:  true,
-status_open: true
+insurance_auth:  %i[true false].sample
+status_open: %i[true false].sample
 )
 
-status_open: %i[true false].sample

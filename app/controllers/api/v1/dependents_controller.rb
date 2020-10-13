@@ -15,7 +15,7 @@ class Api::V1::DependentsController < ApplicationController
 
   def create
     @dependent = Dependent.create(dependent_params)
-
+  
     if @dependent.valid?
       render json: @dependent
 

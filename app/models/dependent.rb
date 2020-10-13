@@ -5,7 +5,9 @@ class Dependent < ApplicationRecord
   has_many :appointments, through: :problems, dependent: :destroy
   has_many :doctors, through: :appointments, dependent: :destroy
 
-  validates :name, presence: true,  length: { minimum: 2 }
+  # validates :name, presence: true,  length: { minimum: 2 }
+  validates :name, uniqueness: { scope: :user,
+      message: "User can not have dependencies with the same name" },  presence: true,  length: { minimum: 2 }
 
 
 end

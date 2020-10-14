@@ -25,7 +25,7 @@ class Api::V1::CommentsController < ApplicationController
     
       def update
       
-        @comment = Comment.find_by(id: params[:id])
+        @comment = Comment.find(params[:id])
         if @comment.update(comment_params)
           render json: @comment
         else
@@ -43,6 +43,6 @@ class Api::V1::CommentsController < ApplicationController
       private
     
       def comment_params
-        params.require(:comment).permit(:text, :problem_id, :status_open)
+        params.require(:comment).permit(:text, :problem_id, :status_open, :id)
       end
 end

@@ -42,6 +42,6 @@ class Api::V1::ProblemsController < ApplicationController
   private
 
   def problem_params
-    params.require(:problem).permit(:name, :dependent_id, :description)
+    params.require(:problem).permit(:name, :dependent_id, :description, files:[])
   end
 end

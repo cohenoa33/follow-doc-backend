@@ -7,5 +7,5 @@ class Doctor < ApplicationRecord
         [street, city, state, zipcode].compact.join(', ')
       end
 
-      validates :name, uniqueness: { case_sensitive: false }, presence: true
+      validates :name, presence: true
 end

@@ -4,6 +4,9 @@ class Problem < ApplicationRecord
   has_many :appointments, dependent: :destroy
   has_many :doctors, through: :appointments, dependent: :destroy
 
+  has_many_attached :files
+
+
   validates :name, uniqueness: { scope: :dependent,
   message: "User can not have dependencies with the same name" },  presence: true,  length: { minimum: 2 }
 
@@ -12,3 +15,11 @@ class Problem < ApplicationRecord
   validates :dependent_id, presence: true
 
 end
+
+
+# @message.image.attach(
+#   io: File.open('/path/to/file'),
+#   filename: 'file.pdf',
+#   content_type: 'application/pdf',
+#   identify: false
+# )

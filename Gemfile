@@ -42,7 +42,8 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # upload files
 gem 'active_model_serializers'
-gem 'aws-sdk-s3', require: false
+gem "aws-sdk-s3", require: false
+
 gem 'dotenv-rails', '~> 2.7'
 
 gem 'faker'

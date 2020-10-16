@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get '/persist', to: 'users#persist'
       get '/reauth' , to: 'auth#reauth'
       post '/addfile', to: 'files#create'
+      patch '/deletefile', to: 'files#destroy'
       # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     end
   end

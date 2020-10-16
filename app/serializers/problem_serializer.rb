@@ -5,7 +5,7 @@ class ProblemSerializer < ActiveModel::Serializer
   belongs_to :dependent
 
   def file
-    object.files.map {|file| rails_blob_path(file, only_path: true)}
+    object.files.map {|file| {path: rails_blob_path(file, only_path: true), name: file.filename }}
   end
 end
 

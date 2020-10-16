@@ -17,9 +17,4 @@ class Problem < ApplicationRecord
 end
 
 
-# @message.image.attach(
-#   io: File.open('/path/to/file'),
-#   filename: 'file.pdf',
-#   content_type: 'application/pdf',
-#   identify: false
-# )
+

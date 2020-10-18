@@ -27,11 +27,10 @@ Comment.create(
 
 Doctor.create(
 name: Faker::TvShows::BigBangTheory.character,
-street: "12519 NE 85th Street",
-city: "Kirkland",
-state: "WA",
-zipcode: "98033",
-info: Faker::Movies::StarWars.quote
+street: "1600 Beach street",
+city: "San Francisco",
+state: "CA",
+zipcode: "94123",
 )
 
 Appointment.create(

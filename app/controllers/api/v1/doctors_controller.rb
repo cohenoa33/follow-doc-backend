@@ -42,7 +42,7 @@ class Api::V1::DoctorsController < ApplicationController
       private
     
       def doctor_params
-        params.require(:doctor).permit(:name,:street,:city,:state, :zipcode, :info)
+        params.require(:doctor).permit(:name,:street,:city,:state, :zipcode)
     end
     
 end

@@ -24,6 +24,14 @@ class Api::V1::DependentsController < ApplicationController
     end
   end
 
+  def update
+    @dependent = Dependent.find_by(id: params[:id])
+    if @dependent.update(dependent_params)
+      render json: @dependent
+    else
+      render json: { error: 'Something went wrong' }
+    end
+  end
   private
 
   def dependent_params

@@ -1,7 +1,7 @@
 require 'faker'
 
 User.create(
-  username: (Faker::Name.first_name + Faker::Name.last_name),
+  username: "why",
   email: Faker::Internet.email,
   password: '123',
   password_confirmation: '123'
@@ -9,7 +9,7 @@ User.create(
 
 Dependent.create(
   name: Faker::TvShows::RuPaul.queen,
-  user_id: User.all.sample.id
+  user_id: 11
 )
 
 Problem.create(
@@ -39,7 +39,7 @@ time: "10:00",
 note: Faker::Cannabis.health_benefit, 
 doctor_id: Doctor.all.sample.id, 
 problem_id: Problem.all.sample.id, 
-insurance_auth:  %i[true false].sample
+insurance_auth:  %i[true false].sample,
 status_open: %i[true false].sample
 )
 

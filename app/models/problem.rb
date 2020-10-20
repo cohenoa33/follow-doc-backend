@@ -11,7 +11,7 @@ class Problem < ApplicationRecord
   message: "User can not have dependencies with the same name" },  presence: true,  length: { minimum: 2 }
 
 
-  validates :description, presence: true,  length: { minimum: 3 }
+  validates :description, presence: true,  length: { minimum: 3, maximum: 300 }
   validates :dependent_id, presence: true
 
 end

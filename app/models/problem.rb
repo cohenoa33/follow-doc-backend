@@ -8,7 +8,7 @@ class Problem < ApplicationRecord
 
 
   validates :name, uniqueness: { scope: :dependent,
-  message: "User can not have dependencies with the same name" },  presence: true,  length: { minimum: 2 }
+  message: "Dependent already have problem with this name" },  presence: true,  length: { minimum: 2 }
 
 
   validates :description, presence: true,  length: { minimum: 3, maximum: 300 }

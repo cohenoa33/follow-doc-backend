@@ -20,7 +20,7 @@ class Api::V1::DependentsController < ApplicationController
       render json: @dependent
 
     else
-      render json: { error: 'failed to add dependent' }, status: :not_acceptable
+      render json: { error: @dependent.errors.full_messages }, status: :not_acceptable
     end
   end
 
@@ -29,7 +29,7 @@ class Api::V1::DependentsController < ApplicationController
     if @dependent.update(dependent_params)
       render json: @dependent
     else
-      render json: { error: 'Something went wrong' }
+      render json: { error:  @dependent.errors.full_messages }
     end
   end
   private

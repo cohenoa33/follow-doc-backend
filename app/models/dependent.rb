@@ -7,7 +7,7 @@ class Dependent < ApplicationRecord
 
   # validates :name, presence: true,  length: { minimum: 2 }
   validates :name, uniqueness: { scope: :user,
-      message: "User can not have dependencies with the same name" },  presence: true,  length: { minimum: 2 }
+      message: "User already have dependent with this name" },  presence: true,  length: { minimum: 2 }
 
 
 end

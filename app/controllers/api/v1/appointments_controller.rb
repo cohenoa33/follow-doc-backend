@@ -19,7 +19,7 @@ class Api::V1::AppointmentsController < ApplicationController
           render json: @appointment
     
         else
-          render json: { error: 'failed to add new appointment' }, status: :not_acceptable
+          render json: { error: @appointment.errors.full_messages }, status: :not_acceptable
         end
       end
       def update

@@ -1,25 +1,40 @@
-# README
+# Welcome to FollowDoc: backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description:
 
-Things you may want to cover:
+Keep track of your and your family's medical issues and doctor appointments.
+Create a list of follow-up items, add notes, and upload related docs.
 
-* Ruby version
+You will also be able to keep a to-do list of all the ongoing items and have an organized list of your future and past appointments.
 
-* System dependencies
+## Database initialization
 
-* Configuration
+This application is using `postgreSQL` as database.
 
-* Database creation
+## Installation
 
-* Database initialization
+- Fork and clone repository.
+- Navigate into the directory where you cloned the repository.
+- Enter the command `bundle install` in the terminal.
+- Run `sudo service postgresql start` before starting
+- Run `rails db:migrate` in the terminal.
+- Run `rails db:seed` in the terminal for testing data.
+- Run `rails s` to begin server and navigate to your browser 'localhost:3000' (or the server you are running) to view the website!
 
-* How to run the test suite
+## Ruby version
 
-* Services (job queues, cache servers, search engines, etc.)
+The application runs on Ruby 2.7.0
 
-* Deployment instructions
+For `rvm` users, be sure to run:
 
-* ...
-# follow-doc-backend
+```
+rvm use ruby 2.7.0
+```
+
+## System dependencies
+
+Install rails server and run `rails s` to start this backend server.
+
+## Frontend
+
+https://github.com/cohenoa33/follow-doc-frontend

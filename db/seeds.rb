@@ -14,7 +14,7 @@ Dependent.create(
 
 Problem.create(
   name: Faker::Science.element,
-  dependent_id: 1
+  dependent_id: 1,
   description: Faker::TvShows::BigBangTheory.quote
 )
 

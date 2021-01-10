@@ -36,5 +36,6 @@ rvm use ruby 2.7.0
 Install rails server and run `rails s` to start this backend server.
 
 ## Frontend
+[Demo](http://follow-doc.surge.sh/)
 
 https://github.com/cohenoa33/follow-doc-frontend

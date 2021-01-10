@@ -9,12 +9,12 @@ User.create(
 
 Dependent.create(
   name: Faker::TvShows::RuPaul.queen,
-  user_id: 11
+  user_id: 1
 )
 
 Problem.create(
   name: Faker::Science.element,
-  dependent_id: Dependent.all.sample.id,
+  dependent_id: 1
   description: Faker::TvShows::BigBangTheory.quote
 )
 
